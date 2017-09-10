@@ -1,0 +1,19 @@
+{
+  "name": "env-manager-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utilecobra/env-manager-server.git"
+  },
+  "author": "Andrzej Marjanowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utilecobra/env-manager-server/issues"
+  },
+  "homepage": "https://github.com/utilecobra/env-manager-server#readme"
+}

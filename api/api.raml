@@ -1,0 +1,28 @@
+#%RAML 1.0
+title: Env Manager Server API
+version: v1
+baseUri: http://localhost:3000
+
+uses:
+  A: ./types.raml
+
+/environments:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: array
+            items: A.Environment
+            examples: !include ./examples/get-environments.raml
+  /{environmentId}:
+    uriParameters:
+      environmentId:
+        type: string
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: A.Environment
+              examples: !include ./examples/get-environment.raml
