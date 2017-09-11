@@ -41,7 +41,7 @@ class App {
   private init(): void {
     mongoose.Promise = require('q').Promise;
 
-    mongoose.connect('mongodb://localhost:27017/env-manager', {useMongoClient: true});
+    mongoose.connect('mongodb://e-qa.betacom.com.pl:27017/env-manager', {useMongoClient: true});
     mongoose.connection.on('error', error => {
       console.error(error);
     });
