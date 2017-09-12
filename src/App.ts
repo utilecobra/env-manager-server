@@ -5,6 +5,7 @@ import * as cors from 'cors';
 import mongoose = require('mongoose');
 
 import EnvironmentRouter from './routes/environment.route';
+import ServiceRouter from './routes/service.route';
 
 class App {
   public express: express.Application;
@@ -27,15 +28,17 @@ class App {
   private routes(): void {
     // CORS
     const corsOptions: cors.CorsOptions = {
-      allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
+      allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
       credentials: true,
-      methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-      origin: "http://localhost:4200",
+      methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+      origin: 'http://localhost:4200',
       preflightContinue: false
     };
     this.express.use(cors(corsOptions));
+
     // Routes
-    this.express.use('/api/v1/environments', EnvironmentRouter)
+    this.express.use('/api/v1/environments', EnvironmentRouter);
+    this.express.use('/api/v1/services', ServiceRouter);
   }
 
   private init(): void {
